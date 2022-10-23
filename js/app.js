@@ -22,31 +22,16 @@ function iniciarApp(){
     // console.log( categorias );
 
     categorias.forEach( categoria => {
-       // para evitar utilizar categoria.strCategory, podemos aplicar destructuring y obtener el nombre de la categoria en la variable
       const { strCategory } = categoria;
-      //# con innerHTML
-      // selectCategorias.innerHTML += `
-      //   <option value="${strCategory}">${strCategory}</option>
-      // `;
-
-      //# con createElement
+      
       const option = document.createElement('OPTION');
       option.textContent = strCategory;
-        // const text = document.createTextNode(strCategory);
-        // option.appendChild(text);
       option.value = strCategory;
-        // option.setAttribute('value', strCategory);
-      // console.log(option);
       selectCategorias.appendChild(option);
     });
   }
 
   async function seleccionarCategoria(e){
-    // normalmente en otras APIs las categorias se buscan por id pero en esta API se utiliza el nombre de la categoria para buscar las comidas que pertenecen a la categoria.
-    // 2º endpoint: https://www.themealdb.com/api/json/v1/1/filter.php
-    /* query parameters: ?c=nombre_categoria 
-            por ejemplo: ?c=Seafood */
-
       const categoria = e.target.value;
       const url = `https://www.themealdb.com/api/json/v1/1/filter.php?c=${categoria}`;
       const respuesta = await fetch(url);
@@ -58,7 +43,6 @@ function iniciarApp(){
     
   function mostrarRecetas(recetas){
     const contenedorCard = document.querySelector('#resultado');;
-    // console.log(contenedorCard);
 
     limpiarHtml(contenedorCard);
 
@@ -122,12 +106,7 @@ function iniciarApp(){
   }
 
   async function seleccionarReceta(id){
-    /* 
-      Lookup full meal details by id:
-      https://www.themealdb.com/api/json/v1/1/lookup.php?i=52772
-      Search meal by name:
-      https://www.themealdb.com/api/json/v1/1/search.php?s=Arrabiata
-    */
+   
     const url = `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`;
 
     const respuesta = await fetch(url);
