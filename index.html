@@ -12,19 +12,25 @@
 
 <body>
 
-  <nav class="navbar navbar-expand-lg navbar-dark bg-warning bg-gradient p-3">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-info bg-gradient p-3">
     <div class="container-fluid">
       <a class="navbar-brand fs-4" href="index.html">Buscador de Recetas</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
         aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link fs-4 active" aria-current="page" href="index.html">Inicio</a>
+            </li>
+        </ul>
+    </div>
     </div>
   </nav>
 
   <main class="mt-5 container-lg">
-    <h2 class="text-center fs-1">Inicio</h2>
+    <!-- <h2 class="text-center fs-1">Inicio</h2> -->
 
     <div class="d-md-flex justify-content-md-center mt-5 ">
       <form class="card col-md-8 bg-light p-5">
@@ -36,7 +42,7 @@
         </div>
       </form>
     </div>
-    <div id="resultado" class="mt-5 row"></div>
+    <div id="resultado" class="mt-5 mb-5 row shadow"></div>
   </main>
 
 
